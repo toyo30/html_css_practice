@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+body{
+    font-family: '돋움', dotum, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    color: #3c3c3c;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    vertical-align: top;
+}
+img  {
+    vertical-align: top;
+}
+
+h1 {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 26px;
+    line-height: 38px;
+    /*line-height 쓰는 기준이 뭐지? */
+    color: #000;
+
+}
+
+.main_wrap{
+    background-color: #ececec;
+}
+.main_wrap .content {
+    position: relative;
+    /*content는 여러 번 사용할 수도 있는 클래스 명이기 때문에 부모요소까지 입력해준다. */
+    width: 1000px;
+    margin: 0 auto;
+    padding: 50px 0 20px;
+}
+
+
+.main_wrap .noti_txt{
+    position: absolute;
+    top: 20px;
+    right: 0;
+    font-size:12px;
+    color: #7c7c7c;
+}
+
+
+.main_list li{
+    float: left;
+}
+
+
+
+.main_list::after {
+    display: block;
+    content:'';
+    clear: both;
+}
+
+.main_list li + li{
+    margin-left: 17px;
+}
+
+.main_list li:nth-child(n+2){
+    /* ???n+1, n+2의 차이 */
+    margin-left:17px;
+}
+.main_list .item_link{
+    display: block;
+    position: relative;
+    /* 클릭이 됨. */
+}
+.main_list .img_box img{
+    width: 322px;
+    height: 215px;
+}
+
+
+.main_list .img_box{
+    position:relative;
+}
+
+.main_list li .img_box::after{
+    position: absolute;
+    top:0 ;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content:'';
+    border: 1px solid rgba(0,0,0,0.05);
+    background-color:rgba(0,0,0, 1);
+}
+
+.main_list .info{
+    position:absolute;
+    right:15px;
+    bottom:15px;
+    left: 15px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.main_list .category{
+    font-size: 14px;
+    line-height: 18px;
+    /* 폰트 사이즈의 경우 line-height를 2px, 4px 더해주는 것이 좋다. */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+
+}
+.main_list .title{
+    margin-top: 3px;
+    font-size: 18px;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+
+}
+
