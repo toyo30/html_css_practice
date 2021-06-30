@@ -1,0 +1,381 @@
+@charset "UTF-8";
+
+body{
+    font-family: '돋움', dotum, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    color: #3c3c3c;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    vertical-align: top;
+}
+img  {
+    vertical-align: top;
+}
+
+h1 {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 26px;
+    line-height: 38px;
+    /*line-height 쓰는 기준이 뭐지? */
+    color: #000;
+
+}
+
+.blind {
+    overflow:hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1p;
+}
+
+
+
+.main_wrap{
+    background-color: #ececec;
+}
+.main_wrap .content {
+    position: relative;
+    /*content는 여러 번 사용할 수도 있는 클래스 명이기 때문에 부모요소까지 입력해준다. */
+    width: 1000px;
+    margin: 0 auto;
+    padding: 50px 0 20px;
+}
+
+
+.main_wrap .noti_txt{
+    position: absolute;
+    top: 20px;
+    right: 0;
+    font-size:12px;
+    color: #7c7c7c;
+}
+
+
+.main_list li{
+    float: left;
+}
+
+
+
+.main_list::after {
+    display: block;
+    content:'';
+    clear: both;
+}
+
+.main_list li + li{
+    margin-left: 17px;
+}
+
+.main_list li:nth-child(n+2){
+    /* ???n+1, n+2의 차이 */
+    margin-left:17px;
+}
+.main_list .item_link{
+    display: block;
+    position: relative;
+    /* 클릭이 됨. */
+}
+.main_list .img_box img{
+    width: 322px;
+    height: 215px;
+}
+
+
+.main_list .img_box{
+    position:relative;
+}
+
+.main_list li .img_box::after{
+    position: absolute;
+    top:0 ;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content:'';
+    border: 1px solid rgba(0,0,0,0.05);
+    background-color:rgba(0,0,0, 1);
+}
+
+.main_list .info_wrap{
+    position:absolute;
+    right:15px;
+    bottom:15px;
+    left: 15px;
+    color: #fff;
+    overflow: hidden;
+
+}
+
+.main_list .info{
+    margin-left: 40px;
+}
+
+.main_list .rank {
+    position:absolute;
+    top: -5px;
+    text-align: center;
+}
+
+.main_list .rank .change {
+    display: block;
+    margin-top: 11px;
+
+}
+
+.main_list .rank .change:before{
+    display: inline-block;
+    content: '';
+    margin-right: 3px;
+}
+
+/*up down 이미지 넣기 */
+
+.rank .up::before{
+    width: 7px;
+    height: 10px;
+    background: url(./img2/rank_up.png) no-repeat;
+}
+
+.rank .down::before{
+    width: 7px;
+    height: 10px;
+    background: url(./img2/rank_down.png) no-repeat;
+}
+
+.rank .keep::before{
+    width: 8px;
+    height: 2px;
+    padding-bottom: 3px;
+    background: url(./img2/rank_keep.png) no-repeat;
+}
+
+.rank .up {
+    color: #f82850;
+}
+
+.rank .down{
+    color: #1996ff;
+}
+
+.main_list .rank .num {
+    display: block;
+    font-size: 40px;
+    line-height: 42px;
+}
+
+.main_list .category{
+    font-size: 14px;
+    line-height: 18px;
+    /* 폰트 사이즈의 경우 line-height를 2px, 4px 더해주는 것이 좋다. */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+
+}
+.main_list .title{
+    margin-top: 3px;
+    font-size: 18px;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.main_list .like {
+    position: relative;
+    display: block;
+    margin-top: 5px;
+    padding-left: 18px;
+    font-size:14px;
+    line-height: 20px;
+}
+
+.main_list .like:before{
+    position: absolute;
+    top: 5px;
+    left: 0;
+    content: '';
+    width: 14px;
+    height: 15px;
+    background: url(./img2/like.png) no-repeat;
+}
+
+.sub_wrap {
+    margin-top: 30px;
+}
+
+.sub_list{
+    position: relative;
+    width:1000px;
+    margin: 0 auto;
+}
+
+.sub_list .item_link img{
+    width: 188px;
+    height: 141px;
+}
+
+.sub_list li{
+    float: left;
+    width: 188px;
+    margin-bottom:40px;
+}
+
+.sub_list::after {
+    display: block;
+    content:'';
+    clear: both;
+}
+
+.sub_list li +li {
+    margin-left:15px;
+}
+
+
+.sub_list li:nth-child(5n+1){
+    margin-left: 0;
+}
+
+
+/*sub_list img 99:99 재생시간 */
+
+.sub_list .img_wrap {
+    position:relative;
+    margin-top: 10px;
+}
+
+.sub_list .time {
+    position:absolute;
+    right: 4px;
+    right: 4px;
+    bottom: 4px;
+    height: 18px;
+    padding: 0 7px;
+    font-size: 11px;
+    color:#fff;
+    background-color:rgba(0, 0, 0, 0.7)
+}
+
+.sub_list .watch_later_link {
+    display: none;
+    /*화면에 처음으로 노출시키지 않음 */
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    width: 45px;
+    height: 45px;
+    background: url(./img2/later_watch.png) no-repeat;
+}
+
+.sub_list .img_wrap:hover > .watch_later_link{
+    display: block;
+}
+
+.sub_list .img_wrap:hover > .time{
+    display: none;
+}
+
+
+.sub_list .item_link{
+    display: block;
+    position: relative;
+}
+
+.sub_list .item_link:after {
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    border: 1px solid rgba(0, 0, 0, 003);
+    background-color: rgba(0,0, 0, 0.15);
+}
+
+/* sub_list 좋아요 수 표기 만들기 */
+
+.sub_list .info_wrap {
+    position:relative;
+    margin-top: 10px;
+
+}
+
+
+.sub_list .info {
+    height: 79px;
+    margin-left:30px;
+}
+
+
+.sub_list .info .title {
+    font-size:15px;
+    line-height: 18px;
+    color: #090909;
+    max-height: 36px;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow:ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.sub_list .category_link {
+    display: block;
+    color: #7ba7df;
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+
+.sub_list .rank{
+    position:absolute;
+    top: 0;
+    bottom: 1px;
+    width: 20px;
+    text-align:center;
+}
+
+.sub_list .rank .num {
+    display: block;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.sub_list .rank .change {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left:0;
+}
+
+.sub_list .rank .change::before{
+    display: inline-block;
+    content: '';
+    margin-right: 3px;
+}
+
+.sub_list .like {
+    position: absolute;
+    bottom: 0;
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.sub_list .like:before{
+    position: absolute;
+    top: 6px;
+    left: 0;
+    content: '';
+    width: 11px;
+    height: 10px;
+    background: url(./img2/like.png) no-repeat;
+}
